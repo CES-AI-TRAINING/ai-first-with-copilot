@@ -4,6 +4,8 @@
 
 This guide focuses on practical prompting techniques and workflows tailored to GitHub Copilot (editor completions, Copilot Chat, and Copilot Labs). It explains how to prompt inside code, use tests as prompts, run iterative cycles, and safely adopt generated code.
 
+For a conceptual explanation of how Copilot works (context, prompts, ranking, and the inline vs chat pipelines), see: [how-github-copilot-works.md](how-github-copilot-works.md)
+
 ## Table of Contents
 
 - When to prompt Copilot vs use Copilot Chat
@@ -31,7 +33,7 @@ Example (Python):
 ```py
 # Implement `compute_checksum(data)` returning SHA256 hex digest
 def compute_checksum(data):
-    
+
 ```
 
 - Multi-step TODO: Outline constraints or required behavior.
@@ -42,9 +44,7 @@ def compute_checksum(data):
  - exponential backoff starting at 200ms
  - return parsed JSON
  - do not add external dependencies */
-async function fetchWithRetries(url, options) {
-  
-}
+async function fetchWithRetries(url, options) {}
 ```
 
 - Format-only prompt: Ask Copilot to produce code in a fixed shape (e.g., function signature, JSON, or specific API usage).
@@ -61,7 +61,7 @@ async function fetchWithRetries(url, options) {
 Example flow:
 
 1. Add test skeleton: `test_foo_handles_empty_input()`
-2. Ask Copilot (via comment or chat): "Implement function to satisfy this test. Keep changes minimal." 
+2. Ask Copilot (via comment or chat): "Implement function to satisfy this test. Keep changes minimal."
 
 Example prompt in test file:
 
@@ -76,13 +76,15 @@ def test_parse_empty():
 ## Refactor, debug, and audit prompts
 
 - Refactor prompts:
+
   - "Refactor this function to improve readability and performance while keeping behavior identical. Keep changes localized and add tests."
 
 - Debug prompts:
+
   - Insert failing test, then ask: "Find the bug and provide a minimal fix with an explanation in one paragraph."
 
 - Security audit prompts:
-  - "Flag any potential security issues, unsafe function calls, or user-input sanitization problems in this code." 
+  - "Flag any potential security issues, unsafe function calls, or user-input sanitization problems in this code."
 
 ## Templates & practical examples
 
