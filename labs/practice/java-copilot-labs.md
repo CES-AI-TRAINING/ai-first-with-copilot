@@ -1,14 +1,17 @@
-# Java Copilot Labs ✅
+# Java Copilot Labs
 
 ## Overview
+
 Hands-on tasks to practice using Copilot with Java (Spring Boot + testing). Each task includes step guidance and example prompts to try with Copilot.
 
 ---
 
-## Lab 1 — Beginner: Create a simple REST API (45–60 min)
+## Lab 1 — Beginner: Create a simple REST API
+
 **Objective:** Build a Spring Boot app exposing a single resource `Product` with CRUD endpoints.
 
 **Steps:**
+
 - Generate a new Spring Boot project (or use Copilot to scaffold).
 - Add a `Product` model (id, name, price, stock).
 - Implement `ProductController` with endpoints: `GET /products`, `GET /products/{id}`, `POST /products`, `PUT /products/{id}`, `DELETE /products/{id}`.
@@ -18,23 +21,29 @@ Hands-on tasks to practice using Copilot with Java (Spring Boot + testing). Each
 **Acceptance criteria:** API endpoints compile, unit tests cover controller behavior, JSON returned matches `Product` schema.
 
 **Example Copilot prompts:**
+
+- "Scaffold a new Spring Boot project (java-copilot-labs under labs/practice folder) with the latest version (Spring Boot 3.5.9, Java 17+), including dependencies for Spring Web and Spring Boot Starter Test to build a REST API."
 - "Generate a Spring Boot controller `ProductController` with CRUD endpoints for a `Product` DTO (id, name, price, stock) and include basic request validation."
-- "Write JUnit 5 tests using MockMvc for `GET /products` and `POST /products`."
+- "Write JUnit 5 tests using REST Assured for `GET /products` and `POST /products`."
+- "Create swagger documentation for the REST API"
 
 **Stretch:** Add DTO mapping with MapStruct or add a simple service layer.
 
 ---
 
-## Lab 2 — Intermediate: Repository & Service (60–90 min)
+## Lab 2 — Intermediate: Repository & Service
+
 **Objective:** Replace in-memory store with a JPA repository (H2) and add service layer.
 
 **Steps:**
+
 - Add `spring-boot-starter-data-jpa` and H2.
 - Create `ProductEntity`, `ProductRepository`, `ProductService`.
 - Migrate controller to use service and repository.
 - Add integration tests with `@SpringBootTest` and an H2 profile.
 
 **Example Copilot prompts:**
+
 - "Create a Spring Data JPA repository for `ProductEntity` and sample `ProductService` methods `findAll`, `save`, `findById`, `deleteById`."
 - "Write an integration test that inserts a product and asserts `GET /products` returns it."
 
@@ -42,16 +51,19 @@ Hands-on tasks to practice using Copilot with Java (Spring Boot + testing). Each
 
 ---
 
-## Lab 3 — Advanced: Refactor & Performance (90–120 min)
+## Lab 3 — Advanced: Refactor & Performance
+
 **Objective:** Use best practices: DTO mapping, exception handling, validation, and optional migration to WebFlux.
 
 **Steps:**
+
 - Implement `@ControllerAdvice` for global exception handling.
 - Add DTOs and mappers.
 - Add input validation (`@Valid`) and tests for invalid inputs.
 - Optionally convert controllers to reactive endpoints with WebFlux.
 
 **Example Copilot prompts:**
+
 - "Refactor the `ProductController` to use DTOs and add a global exception handler that returns meaningful error payloads."
 - "Provide a short summary of trade-offs between MVC and WebFlux for this API."
 
@@ -60,7 +72,7 @@ Hands-on tasks to practice using Copilot with Java (Spring Boot + testing). Each
 ---
 
 ## Copilot prompt patterns & tips 💡
-- Be explicit about framework versions and constraints (e.g., "Spring Boot 3.1, Java 17").
+
+- Be explicit about framework versions and constraints (e.g., "Spring Boot 3.3, Java 17").
 - Ask Copilot to generate tests and test data.
 - Ask for refactors ("Refactor to use service layer + DTOs") and for commit messages ("Create a git commit message for adding Product CRUD").
-

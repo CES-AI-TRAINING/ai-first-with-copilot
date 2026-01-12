@@ -1,6 +1,6 @@
 # Practice Labs — Copilot-focused
 
-Welcome! This folder contains hands-on lab tasks to practice using GitHub Copilot across Java, .NET, Python, and Node.js. Each lab file includes objectives, step-by-step tasks, estimated time, acceptance criteria, and example prompts to use with Copilot.
+Welcome! This folder contains hands-on lab tasks to practice using GitHub Copilot across Java, .NET, Python, Node.js, React, Next.js, and Angular. Each lab file includes objectives, step-by-step tasks, estimated time, acceptance criteria, and example prompts to use with Copilot.
 
 **Labs included:**
 
@@ -8,6 +8,9 @@ Welcome! This folder contains hands-on lab tasks to practice using GitHub Copilo
 - [.NET Copilot Labs](./dotnet-copilot-labs.md)
 - [Python Copilot Labs](./python-copilot-labs.md)
 - [Node.js Copilot Labs](./nodejs-copilot-labs.md)
+- [React Copilot Labs](./react-copilot-labs.md)
+- [Next.js Copilot Labs](./nextjs-copilot-labs.md)
+- [Angular Copilot Labs](./angular-copilot-labs.md)
 
 How to use these labs:
 
